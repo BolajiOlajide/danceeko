@@ -15,8 +15,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'font-semibold transition-all duration-300 rounded-full inline-flex items-center justify-center';
     
     const variants = {
-      primary: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-500 hover:to-pink-500 shadow-[0_0_30px_rgba(139,92,246,0.6)] hover:shadow-[0_0_50px_rgba(236,72,153,0.8)] font-bold uppercase tracking-wider',
-      secondary: 'bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:border-transparent shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] font-bold uppercase tracking-wider',
+      primary: 'bg-gradient-to-r from-[#efd068] to-[#f7e8aa] text-black hover:from-[#f7e8aa] hover:to-[#efd068] shadow-[0_0_30px_rgba(239,208,104,0.6)] hover:shadow-[0_0_50px_rgba(247,232,170,0.8)] font-bold uppercase tracking-wider',
+      secondary: 'bg-transparent border-2 border-[#efd068] text-[#efd068] hover:bg-gradient-to-r hover:from-[#efd068] hover:to-[#f7e8aa] hover:text-black hover:border-transparent shadow-[0_0_20px_rgba(239,208,104,0.3)] hover:shadow-[0_0_40px_rgba(247,232,170,0.6)] font-bold uppercase tracking-wider',
       ghost: 'bg-transparent text-white hover:bg-white/10',
     };
     

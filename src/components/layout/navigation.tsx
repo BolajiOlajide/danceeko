@@ -46,7 +46,7 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#efd068] via-[#f7e8aa] to-[#efd068] bg-clip-text text-transparent">
               DANCE EKO
             </span>
             <span className="text-white ml-2">25</span>
@@ -68,7 +68,7 @@ export function Navigation() {
             
             <motion.a
               href="#signup"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-pink-500/50 transition-all"
+              className="bg-gradient-to-r from-[#efd068] to-[#f7e8aa] text-black px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#efd068]/50 hover:shadow-xl hover:shadow-[#f7e8aa]/50 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -102,7 +102,7 @@ export function Navigation() {
             <motion.a
               key={link.name}
               href={link.href}
-              className="text-3xl font-black text-white hover:text-purple-400 transition-colors"
+              className="text-3xl font-black text-white hover:text-[#efd068] transition-colors"
               onClick={() => setIsOpen(false)}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 50 }}
@@ -115,7 +115,7 @@ export function Navigation() {
           
           <motion.a
             href="#signup"
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider shadow-lg shadow-purple-500/50 mt-4"
+            className="bg-gradient-to-r from-[#efd068] to-[#f7e8aa] text-black px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider shadow-lg shadow-[#efd068]/50 mt-4"
             onClick={() => setIsOpen(false)}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.8 }}

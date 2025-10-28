@@ -20,9 +20,9 @@ export function Newsletter() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden" id="signup">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black">
         {/* Animated gradient orbs */}
         <motion.div
           className="absolute top-0 left-0 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
@@ -110,12 +110,12 @@ export function Newsletter() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="your.email@example.com"
                   required
-                  className="flex-1 px-6 py-4 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                  className="flex-1 px-6 py-5 text-lg rounded-full bg-white/10 backdrop-blur-lg border-2 border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
                 />
-                <Button type="submit" variant="primary" size="lg">
-                  SIGN UP NOW
+                <Button type="submit" variant="primary" size="lg" className="text-lg px-10">
+                  🚀 SIGN UP
                 </Button>
               </div>
             ) : (

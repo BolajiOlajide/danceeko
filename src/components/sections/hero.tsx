@@ -1,27 +1,10 @@
 'use client';
 
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { LINKS } from '@/lib/constants';
-import { useEffect } from 'react';
 
 export function Hero() {
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
-  
-  const springConfig = { damping: 25, stiffness: 150 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [cursorX, cursorY]);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,34 +44,6 @@ export function Hero() {
         {/* Vibrant Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/40 via-black/60 to-black" />
       </div>
-
-      {/* Cursor-Following Gradient Orbs */}
-      <motion.div
-        className="pointer-events-none absolute w-[700px] h-[700px] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-30 rounded-full blur-3xl z-5"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
-      />
-      <motion.div
-        className="pointer-events-none absolute w-[400px] h-[400px] bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-400 opacity-40 rounded-full blur-2xl z-5"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
-        animate={{
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
 
       {/* Animated Gradient Orbs - More Vibrant */}
       <motion.div

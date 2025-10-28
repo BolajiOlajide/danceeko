@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { CursorGlow } from '@/components/ui/cursor-glow';
-import { CustomCursor } from '@/components/ui/custom-cursor';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -28,8 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <CustomCursor />
-        <CursorGlow />
         {children}
       </body>
     </html>

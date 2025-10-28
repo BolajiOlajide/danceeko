@@ -5,10 +5,12 @@ import { Map, Music, Utensils, Store, Sparkles } from 'lucide-react';
 
 export function FestivalGuide() {
   const features = [
-    { icon: Map, label: 'Festival Zones' },
-    { icon: Music, label: 'Art Spaces' },
-    { icon: Utensils, label: 'Food Courts' },
-    { icon: Store, label: 'Brand Areas' },
+    { icon: Map, label: 'Festival Zones', color: 'from-cyan-500 to-blue-600' },
+    { icon: Music, label: 'Art Spaces', color: 'from-purple-500 to-pink-600' },
+    { icon: Utensils, label: 'Food Courts', color: 'from-orange-500 to-red-600' },
+    { icon: Store, label: 'Brand Areas', color: 'from-emerald-500 to-teal-600' },
+    { icon: Sparkles, label: 'Installations', color: 'from-yellow-500 to-orange-600' },
+    { icon: Sparkles, label: 'VIP Lounges', color: 'from-pink-500 to-purple-600' },
   ];
 
   return (
@@ -93,7 +95,7 @@ export function FestivalGuide() {
 
         {/* Features Grid */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -102,17 +104,24 @@ export function FestivalGuide() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.label}
-              className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 text-center"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative group"
+              whileHover={{ scale: 1.05, y: -8 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
             >
-              <feature.icon className="w-12 h-12 text-white mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-white">
-                {feature.label}
-              </h4>
+              {/* Glow */}
+              <div className={`absolute -inset-1 bg-gradient-to-br ${feature.color} rounded-2xl opacity-0 group-hover:opacity-60 blur-md transition-opacity`} />
+              
+              <div className="relative bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 text-center">
+                <div className={`w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-lg`}>
+                  <feature.icon className="w-7 h-7 text-white" />
+                </div>
+                <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wide">
+                  {feature.label}
+                </h4>
+              </div>
             </motion.div>
           ))}
         </motion.div>
