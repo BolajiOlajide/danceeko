@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { TICKET_TIERS, LINKS } from '@/lib/constants';
+import { TICKET_TIERS, COLORS } from '@/lib/constants';
 import { Ticket, Lock, Star, Zap } from 'lucide-react';
 
 export function TicketsV2() {
@@ -29,21 +28,40 @@ export function TicketsV2() {
     },
   };
 
-  const tierIcons = [Star, Zap, Star, Zap];
-  const tierGradients = [
-    { bg: 'from-cyan-500 to-blue-600', glow: 'shadow-cyan-500/50' },
-    { bg: 'from-purple-500 to-pink-600', glow: 'shadow-purple-500/50' },
-    { bg: 'from-orange-500 to-red-600', glow: 'shadow-orange-500/50' },
-    { bg: 'from-emerald-500 to-teal-600', glow: 'shadow-emerald-500/50' },
-  ];
+  const tierIcons = [Star, Zap, Star, Zap] as const;
+  const tierThemes = [
+    {
+      boxShadow: '0 14px 45px rgba(61,127,255,0.35)',
+      accentGradient: `linear-gradient(90deg, ${COLORS.primary.lightBlue}, ${COLORS.primary.blue})`,
+      badgeGradient: `linear-gradient(135deg, ${COLORS.primary.lightBlue}, ${COLORS.primary.blue})`,
+      iconTint: COLORS.primary.lightBlue,
+    },
+    {
+      boxShadow: '0 14px 45px rgba(139,92,246,0.35)',
+      accentGradient: `linear-gradient(90deg, ${COLORS.accent.purple}, ${COLORS.accent.pink})`,
+      badgeGradient: `linear-gradient(135deg, ${COLORS.accent.purple}, ${COLORS.accent.pink})`,
+      iconTint: COLORS.accent.purple,
+    },
+    {
+      boxShadow: '0 14px 45px rgba(249,115,22,0.35)',
+      accentGradient: `linear-gradient(90deg, ${COLORS.accent.orange}, ${COLORS.accent.pink})`,
+      badgeGradient: `linear-gradient(135deg, ${COLORS.accent.orange}, ${COLORS.accent.pink})`,
+      iconTint: COLORS.accent.orange,
+    },
+    {
+      boxShadow: '0 14px 45px rgba(52,211,153,0.3)',
+      accentGradient: 'linear-gradient(90deg, #34D399, #059669)',
+      badgeGradient: 'linear-gradient(135deg, #34D399, #059669)',
+      iconTint: '#34D399',
+    },
+  ] as const;
 
   return (
-    <section className="relative min-h-screen py-24 px-4 overflow-hidden" id="tickets">
-      {/* Dynamic Gradient Background */}
+    <section className="relative min-h-screen py-24 px-4 overflow-hidden bg-black" id="tickets">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07060f] to-black opacity-95" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(239,208,104,0.18),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_85%,rgba(139,92,246,0.16),transparent_62%)]" />
       </div>
 
       {/* Animated Grid Pattern */}
@@ -120,7 +138,7 @@ export function TicketsV2() {
         >
           {TICKET_TIERS.map((tier, index) => {
             const Icon = tierIcons[index];
-            const gradient = tierGradients[index];
+            const theme = tierThemes[index];
             
             return (
               <motion.div
@@ -130,23 +148,21 @@ export function TicketsV2() {
               >
                 {/* Animated Glow Border */}
                 <motion.div
-                  className={`absolute -inset-[2px] bg-gradient-to-r ${gradient.bg} rounded-3xl opacity-60 blur-md group-hover:opacity-100 group-hover:blur-lg`}
-                  animate={{
-                    scale: [1, 1.02, 1],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
+                  className="absolute -inset-px rounded-3xl opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ boxShadow: theme.boxShadow }}
                 />
 
                 {/* Card */}
-                <div className="relative bg-gradient-to-br from-black via-gray-950 to-black rounded-3xl border-2 border-white/10 overflow-hidden">
+                <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-[#08080b] via-[#0e0b14] to-[#08070d] overflow-hidden">
                   {/* Tier Icon/Badge */}
                   <div className="absolute top-4 right-4 z-20">
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${gradient.bg} flex items-center justify-center ${gradient.glow} shadow-lg`}>
-                      <Icon className="w-6 h-6 text-white" />
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
+                      style={{ backgroundImage: theme.badgeGradient, boxShadow: '0 10px 30px rgba(0,0,0,0.45)' }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: theme.iconTint }} />
                     </div>
                   </div>
 
@@ -154,25 +170,34 @@ export function TicketsV2() {
                   <div className="relative p-8">
                     {/* Ticket Name */}
                     <div className="mb-6">
-                      <Ticket className="w-16 h-16 text-white/20 mb-4" />
+                      <Ticket className="w-16 h-16 mb-4" style={{ color: `${theme.iconTint}33` }} />
                       <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-2">
                         {tier.name}
                       </h3>
-                      <div className={`h-1 w-16 bg-gradient-to-r ${gradient.bg} rounded-full`} />
+                      <div className="h-1 w-16 rounded-full" style={{ backgroundImage: theme.accentGradient }} />
                     </div>
 
                     {/* Features */}
                     <div className="space-y-3 mb-8 text-white/70">
                       <div className="flex items-center gap-3">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient.bg}`} />
+                        <div
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundImage: theme.accentGradient }}
+                        />
                         <span className="text-sm font-medium">Festival Access</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient.bg}`} />
+                        <div
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundImage: theme.accentGradient }}
+                        />
                         <span className="text-sm font-medium">Premium Experience</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradient.bg}`} />
+                        <div
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundImage: theme.accentGradient }}
+                        />
                         <span className="text-sm font-medium">Exclusive Perks</span>
                       </div>
                     </div>
@@ -184,75 +209,16 @@ export function TicketsV2() {
                     </div>
                   </div>
 
-                  {/* Coming Soon Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/60 to-black/80 backdrop-blur-[2px] flex items-center justify-center z-10">
-                    <motion.div
-                      className={`bg-gradient-to-r ${gradient.bg} px-8 py-4 rounded-full shadow-2xl ${gradient.glow}`}
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        boxShadow: [
-                          '0 10px 40px rgba(139, 92, 246, 0.4)',
-                          '0 10px 60px rgba(236, 72, 153, 0.6)',
-                          '0 10px 40px rgba(139, 92, 246, 0.4)',
-                        ],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                    >
-                      <span className="text-xl sm:text-2xl font-black text-white uppercase tracking-widest">
-                        COMING SOON
-                      </span>
-                    </motion.div>
+                  {/* Coming Soon Pill */}
+                  <div className="absolute inset-x-8 bottom-6 z-10 flex items-center justify-center">
+                    <span className="inline-flex items-center justify-center rounded-full border border-white/15 bg-black/70 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/65 backdrop-blur">
+                      Coming Soon
+                    </span>
                   </div>
                 </div>
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Waitlist CTA - Prominent */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <div className="max-w-2xl mx-auto mb-8">
-            <p className="text-xl sm:text-2xl text-white font-bold mb-6">
-              Don&apos;t miss out on the biggest Afrobeats festival of 2025
-            </p>
-          </div>
-          
-          <div className="relative inline-block">
-            <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 rounded-full blur-2xl opacity-50"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.5, 0.8, 0.5],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            <Button
-              variant="primary"
-              size="lg"
-              className="relative text-xl sm:text-2xl px-12 py-6"
-              onClick={() => (window.location.href = LINKS.waitlist)}
-            >
-              🔔 JOIN THE WAITLIST NOW
-            </Button>
-          </div>
-          
-          <p className="text-sm text-white/50 mt-6">
-            ⚡ Get early access • 🎁 Exclusive discounts • 📧 Lineup announcements
-          </p>
         </motion.div>
       </div>
     </section>

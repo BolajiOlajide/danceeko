@@ -47,12 +47,12 @@ export function HeroV2() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="flex items-center gap-4 bg-white/5 backdrop-blur-xl border border-white/20 rounded-full">
-            <Calendar className="w-5 h-5 text-[#efd068]" />
+            <Calendar className="w-5 h-5 text-festifrom-festival-gold" />
             <span className="text-white font-bold text-sm sm:text-base tracking-wider">
               TBA 2025
             </span>
             <div className="w-px h-5 bg-white/30" />
-            <MapPin className="w-5 h-5 text-[#f7e8aa]" />
+            <MapPin className="w-5 h-5 text-festival-cream" />
             <span className="text-white font-bold text-sm sm:text-base tracking-wider">
               LAGOS, NIGERIA
             </span>
@@ -73,7 +73,7 @@ export function HeroV2() {
             }}
           >
             <motion.span
-              className="block bg-gradient-to-r from-[#efd068] via-[#f7e8aa] to-[#efd068] bg-clip-text text-transparent"
+              className="block bg-linear-to-r from-festival-gold via-festival-cream to-festival-gold bg-clip-text text-transparent"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -89,7 +89,7 @@ export function HeroV2() {
               DANCE
             </motion.span>
             <motion.span
-              className="block bg-gradient-to-r from-[#f7e8aa] via-[#efd068] to-[#f7e8aa] bg-clip-text text-transparent -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-16"
+              className="block bg-linear-to-r from-festival-cream via-festival-gold to-festival-cream bg-clip-text text-transparent -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-16"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -116,7 +116,7 @@ export function HeroV2() {
           >
             <div className="relative">
               <motion.div
-                className="absolute -inset-2 bg-gradient-to-r from-[#efd068] via-[#f7e8aa] to-[#efd068] rounded-2xl blur-xl opacity-75"
+                className="absolute -inset-2 bg-linear-to-r from-festival-gold via-festival-cream to-festival-gold rounded-2xl blur-xl opacity-75"
                 animate={{
                   scale: [1, 1.1, 1],
                   rotate: [0, 5, -5, 0],
@@ -128,7 +128,7 @@ export function HeroV2() {
                 }}
               />
               <div className="relative px-8 py-3 rounded-2xl">
-                <span className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#efd068] to-[#f7e8aa] bg-clip-text text-transparent">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-black bg-linear-to-r from-festival-gold to-festival-cream bg-clip-text text-transparent">
                   2025
                 </span>
               </div>
@@ -146,9 +146,9 @@ export function HeroV2() {
             textShadow: '0 4px 30px rgba(0, 0, 0, 0.9)',
           }}
         >
-          WHERE <span className="text-[#efd068] font-black">AFROBEATS</span>,{' '}
-          <span className="text-[#f7e8aa] font-black">AMAPIANO</span> & {' '}
-          <span className="text-[#efd068] font-black">AFROHOUSE</span> UNITE
+          WHERE <span className="text-festifrom-festival-gold font-black">AFROBEATS</span>,{' '}
+          <span className="text-festival-cream font-black">AMAPIANO</span> & {' '}
+          <span className="text-festifrom-festival-gold font-black">AFROHOUSE</span> UNITE
           <span className="block mt-2 text-sm sm:text-base md:text-lg text-white/80">
             From day to night, Lagos dances. Join the rhythm. 🎵
           </span>
