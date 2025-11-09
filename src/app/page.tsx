@@ -9,7 +9,6 @@ const Footer = dynamicImport(() => import('@/components/layout/footer').then(mod
 export default function Home() {
   return (
     <main className="relative bg-black min-h-screen">
-      <span className='text-white'>Hello</span>
       <Footer />
     </main>
   );
