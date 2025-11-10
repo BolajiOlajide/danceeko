@@ -60,7 +60,7 @@ export function Location() {
         {/* Location Card */}
         <div className="relative z-10 w-full max-w-3xl rounded-3xl border border-white/20 bg-white/10 px-8 py-16 text-center backdrop-blur-sm sm:px-12 sm:py-20">
           {/* LOCATION label */}
-          <h3 className="mb-8 text-md font-black uppercase tracking-[0.5em] text-gray-400 sm:text-base">
+          <h3 className="mb-8 text-xl font-black uppercase tracking-[0.5em] text-gray-400 sm:text-2xl">
             Location
           </h3>
 
