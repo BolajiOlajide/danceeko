@@ -30,16 +30,31 @@ export function Hero() {
 
         {/* Buttons */}
         <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
-          <button className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg">
-            Sign Up Now
-          </button>
-          <button className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg">
+          <a
+            href="http://jetronticket.com/events/dance-eko-25"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg"
+          >
+            Get Tickets
+          </a>
+          <a
+            href="https://www.youtube.com/@evenintheday/search?query=dance%20eko"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg"
+          >
             Watch Dance Eko 2024
-          </button>
+          </a>
         </div>
 
         {/* Scroll to Explore */}
-        <div className="flex cursor-pointer flex-col items-center gap-2">
+        <div
+          className="flex cursor-pointer flex-col items-center gap-2"
+          onClick={() => {
+            document.getElementById('lineup')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <p className="text-sm font-medium uppercase tracking-widest text-white/80 sm:text-base">
             Scroll to Explore
           </p>

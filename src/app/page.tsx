@@ -9,6 +9,11 @@ const HeroSection = dynamicImport(
   { ssr: false }
 );
 
+const LineupSection = dynamicImport(
+  () => import('@/components/sections/lineup').then((mod) => ({ default: mod.Lineup })),
+  { ssr: false }
+);
+
 const LocationSection = dynamicImport(
   () => import('@/components/sections/location').then((mod) => ({ default: mod.Location })),
   { ssr: false }
@@ -26,6 +31,7 @@ export default function Home() {
     <main className="relative bg-black min-h-screen">
       <HeroSection />
       <TicketSection />
+      <LineupSection />
       <LocationSection />
       <Footer />
     </main>
