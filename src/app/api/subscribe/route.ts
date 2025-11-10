@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { stat } from 'node:fs/promises';
 
 const WIX_SITE_ID = 'b3193f81-d796-471e-8ff6-f4d438fd3b6e';
 const WIX_FORM_ID = 'fc2c4d73-1102-499d-9b84-536690e72cbc';
@@ -41,20 +42,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-
-    // Prepare submission data for Wix
-    // Note: Field keys may need to be adjusted based on your actual Wix form configuration
     const submissionData = {
       submission: {
         formId: WIX_FORM_ID,
         submissions: {
-          ...(firstName && { 'First name': firstName }), // Adjust field key as needed
-          ...(lastName && { 'Last name': lastName }), // Adjust field key as needed
-          ...(email && { 'Email': email }),
-          ...(phone && { 'Phone': phone }),
-        }
-      },
-      status: 'CONFIRMED'
+          'First name': firstName,
+          'Last name': lastName || '',
+          'Email': email,
+          'Phone': phone || ''
+        },
+        status: 'CONFIRMED'
+      }
     };
 
     // Submit to Wix Forms API
