@@ -1,4 +1,4 @@
-const artists = [
+const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
   {
     // name: 'Skyla Tyla',
     // image: '/artists/skyla-tyla.jpg',
