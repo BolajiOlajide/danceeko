@@ -19,17 +19,17 @@ const createStarPattern = (points: Array<{ x: number; y: number; scale?: number 
 
 const tiers = [
   {
-    title: 'FIRST WAVE',
+    title: 'Pre-sale',
     pattern: 'coralDots',
-    perks: ['Festival Access', 'Premium Experience', 'Exclusive Perks'],
+    perks: ['Festival Access'],
     locked: false,
     link: 'https://www.jetronticket.com/dance-eko-25',
     buttonColor: 'from-[#ff6a4f] to-[#e85537]',
   },
   {
-    title: 'SECOND WAVE',
+    title: 'General Sale',
     pattern: 'amberDots',
-    perks: ['Festival Access', 'Premium Experience', 'Exclusive Perks'],
+    perks: ['Festival Access'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -45,7 +45,7 @@ const tiers = [
   {
     title: 'STAGE ACCESS',
     pattern: 'greenStars',
-    perks: ['Festival Access', 'Premium Experience', 'Exclusive Perks'],
+    perks: ['Festival Access', 'Stage Pass'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -163,14 +163,13 @@ export function Ticket() {
             </div>
 
             <div className="relative flex flex-1 flex-col px-8 pb-10 pt-8 text-[#2f120b]">
-              <div className="flex flex-col gap-3 text-base">
+              <div className="flex min-h-[108px] flex-col gap-3 text-base">
                 {tier.perks.map((perk) => (
                   <p key={perk} className="font-medium">
                     {perk}
                   </p>
                 ))}
               </div>
-
               <div className="relative mt-6 border-t border-dashed border-[#a18a7c] pt-6">
                 <div className="flex flex-col items-center gap-4">
                   {tier.locked ? (
@@ -181,14 +180,17 @@ export function Ticket() {
                       </span>
                     </>
                   ) : (
-                    <a
-                      href={tier.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-b ${tier.buttonColor} px-6 py-2.5 text-sm font-black uppercase tracking-wide text-white shadow-lg transition hover:brightness-110`}
-                    >
-                      Get Tickets
-                    </a>
+                    <>
+                      <div className="h-12" />
+                      <a
+                        href={tier.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-b ${tier.buttonColor} px-6 py-2.5 text-sm font-black uppercase tracking-wide text-white shadow-lg transition hover:brightness-110`}
+                      >
+                        Get Tickets
+                      </a>
+                    </>
                   )}
                 </div>
               </div>
@@ -227,6 +229,48 @@ function LockIcon({
       />
       <path
         d="M10 14V11.5C10 7.9 12.9 5 16.5 5S23 7.9 23 11.5V14"
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M16 18v4"
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <circle cx="16" cy="23" r="2" fill={stroke} />
+    </svg>
+  );
+}
+
+function UnlockIcon({
+  className,
+  stroke = '#0a892e',
+}: {
+  className?: string;
+  stroke?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      className={className}
+      role="img"
+      aria-label="Unlocked"
+    >
+      <rect
+        x="6"
+        y="14"
+        width="20"
+        height="14"
+        rx="4"
+        stroke={stroke}
+        strokeWidth="2"
+        fill="white"
+      />
+      <path
+        d="M10 14V11.5C10 7.9 12.9 5 16.5 5S23 7.9 23 11.5V9"
         stroke={stroke}
         strokeWidth="2"
         strokeLinecap="round"

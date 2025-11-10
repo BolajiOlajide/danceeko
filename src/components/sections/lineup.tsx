@@ -1,8 +1,8 @@
 const artists = [
   {
-    name: 'Skyla Tyla',
-    image: '/artists/skyla-tyla.jpg',
-    locked: false,
+    // name: 'Skyla Tyla',
+    // image: '/artists/skyla-tyla.jpg',
+    locked: true,
   },
   { locked: true },
   { locked: true },
@@ -78,7 +78,7 @@ export function Lineup() {
 
           <div className="rounded-2xl border-2 border-purple-400/50 bg-gradient-to-r from-purple-700 to-purple-600 px-4 py-4 text-center shadow-2xl sm:rounded-3xl sm:px-8 sm:py-6">
             <p className="text-base font-bold leading-snug text-white sm:text-xl md:text-2xl lg:text-3xl">
-              Full lineup to be announced in January 2025
+              To be announced
             </p>
           </div>
         </div>

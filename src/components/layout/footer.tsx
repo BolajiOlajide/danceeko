@@ -166,9 +166,13 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-white/10 pt-6 sm:gap-4 sm:pt-8">
-          <span className="text-center text-[clamp(2.5rem,12vw,10rem)] font-black uppercase leading-none tracking-tight text-white">
-            DANCE EKO
-          </span>
+          <div className="flex justify-center">
+            <img
+              src="/Dance-EKO-2025-Logo-trans.png"
+              alt="Dance Eko"
+              className="h-auto w-full max-w-md"
+            />
+          </div>
           <div className="flex justify-center text-xs font-semibold tracking-[0.3em] text-white/70 sm:justify-end sm:text-sm sm:tracking-[0.4em]">
             © 2025
           </div>
