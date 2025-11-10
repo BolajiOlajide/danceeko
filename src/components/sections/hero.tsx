@@ -32,7 +32,7 @@ export function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="mb-8 flex w-full max-w-md flex-col gap-3 px-2 sm:mb-12 sm:max-w-2xl sm:flex-row sm:gap-6">
+        <div className="mb-8 flex justify-center items-center w-full max-w-md flex-col gap-3 px-2 sm:mb-12 sm:max-w-2xl sm:flex-row sm:gap-6">
           <a
             href="https://www.jetronticket.com/dance-eko-25#tickets"
             target="_blank"

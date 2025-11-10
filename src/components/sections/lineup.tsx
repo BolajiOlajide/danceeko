@@ -48,14 +48,6 @@ export function Lineup() {
         🎵
       </div>
 
-      {/* Decorative dollar signs */}
-      <div className="pointer-events-none absolute left-10 top-1/4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-xl font-black text-black">
-        $
-      </div>
-      <div className="pointer-events-none absolute right-20 top-1/3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-lg font-black text-black">
-        $
-      </div>
-
       <div className="relative mx-auto max-w-6xl">
         {/* Heading */}
         <h2 className="mb-8 text-center text-5xl font-black uppercase text-white sm:mb-12 sm:text-7xl lg:text-8xl">
@@ -129,10 +121,6 @@ export function Lineup() {
                     <h3 className="text-base font-black text-white sm:text-xl md:text-2xl">
                       {artist.name}
                     </h3>
-                  </div>
-                  {/* Dollar badge on artist card */}
-                  <div className="absolute -left-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-base font-black text-black shadow-lg sm:-left-3 sm:-top-3 sm:h-10 sm:w-10 sm:text-lg">
-                    $
                   </div>
                 </div>
               )}
