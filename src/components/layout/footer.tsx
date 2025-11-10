@@ -88,7 +88,7 @@ export function Footer() {
         </div>
 
         <form className="w-full" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label>
               <span className="sr-only">First name</span>
               <input
@@ -98,6 +98,20 @@ export function Footer() {
                 value={formData.firstName}
                 onChange={handleChange}
                 disabled={status === 'loading'}
+                required
+                className={inputStyles}
+              />
+            </label>
+            <label>
+              <span className="sr-only">Last name</span>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                value={formData.lastName}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                required
                 className={inputStyles}
               />
             </label>
@@ -126,13 +140,15 @@ export function Footer() {
                 className={inputStyles}
               />
             </label>
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="h-12 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-base font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 sm:h-14 sm:text-lg lg:h-16"
-            >
-              {status === 'loading' ? 'SUBMITTING...' : 'SIGN UP NOW'}
-            </button>
+            <div className="col-span-1 sm:col-span-2 flex justify-center">
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="h-12 w-full max-w-md cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-base font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 sm:h-14 sm:text-lg lg:h-16"
+              >
+                {status === 'loading' ? 'SUBMITTING...' : 'SIGN UP NOW'}
+              </button>
+            </div>
           </div>
           {message && (
             <div className={`mt-4 text-center text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>

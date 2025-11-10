@@ -9,6 +9,20 @@ export async function POST(request: NextRequest) {
     const { firstName, lastName, email, phone } = body;
 
     // Validate required fields
+    if (!firstName) {
+      return NextResponse.json(
+        { error: 'First name is required' },
+        { status: 400 }
+      );
+    }
+
+    if (!lastName) {
+      return NextResponse.json(
+        { error: 'Last name is required' },
+        { status: 400 }
+      );
+    }
+
     if (!email) {
       return NextResponse.json(
         { error: 'Email is required' },
@@ -18,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     // Get API key from environment variable
     const apiKey = process.env.WIX_API_KEY;
-    
+
     if (!apiKey) {
       console.error('WIX_API_KEY is not configured');
       return NextResponse.json(
@@ -27,18 +41,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Construct the full name if both first and last names are provided
-    const fullName = [firstName, lastName].filter(Boolean).join(' ');
 
     // Prepare submission data for Wix
     // Note: Field keys may need to be adjusted based on your actual Wix form configuration
     const submissionData = {
-      formId: WIX_FORM_ID,
       submission: {
+        formId: WIX_FORM_ID,
         submissions: {
-          ...(fullName && { 'name': fullName }), // Adjust field key as needed
-          ...(email && { 'email': email }),
-          ...(phone && { 'phone': phone }),
+          ...(firstName && { 'First name': firstName }), // Adjust field key as needed
+          ...(lastName && { 'Last name': lastName }), // Adjust field key as needed
+          ...(email && { 'Email': email }),
+          ...(phone && { 'Phone': phone }),
         }
       },
       status: 'CONFIRMED'
@@ -68,7 +81,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       success: true,
       message: 'Successfully subscribed!',
       submissionId: data.submission?.id
