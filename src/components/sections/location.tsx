@@ -58,27 +58,27 @@ export function Location() {
         </div>
 
         {/* Location Card */}
-        <div className="relative z-10 w-full max-w-3xl rounded-3xl border border-white/20 bg-white/10 px-8 py-16 text-center backdrop-blur-sm sm:px-12 sm:py-20">
+        <div className="relative z-10 w-full max-w-3xl rounded-2xl border border-white/20 bg-white/10 px-6 py-12 text-center backdrop-blur-sm sm:rounded-3xl sm:px-12 sm:py-20">
           {/* LOCATION label */}
-          <h3 className="mb-8 text-xl font-black uppercase tracking-[0.5em] text-gray-400 sm:text-2xl">
+          <h3 className="mb-6 text-lg font-black uppercase tracking-[0.4em] text-gray-400 sm:mb-8 sm:text-2xl sm:tracking-[0.5em]">
             Location
           </h3>
 
           {/* Twinkle Icon and Title */}
-          <div className="mb-8 flex justify-center items-center">
+          <div className="mb-6 flex items-center justify-center gap-2 sm:mb-8">
             {/* Pulsating Twinkle Icon */}
-            <div className="pulsate text-xl sm:text-2xl">
+            <div className="pulsate text-2xl sm:text-3xl">
               ✨
             </div>
 
             {/* To be announced */}
-            <h2 className="text-xl font-black text-white sm:text-5xl lg:text-2xl">
+            <h2 className="text-2xl font-black text-white sm:text-4xl lg:text-5xl">
               To be announced
             </h2>
           </div>
 
           {/* Description */}
-          <p className="text-base leading-relaxed text-white/90 sm:text-lg">
+          <p className="px-2 text-sm leading-relaxed text-white/90 sm:text-base md:text-lg">
             We're building a new world inside Lagos unlike anything you've ever experienced, stay
             tuned!
           </p>

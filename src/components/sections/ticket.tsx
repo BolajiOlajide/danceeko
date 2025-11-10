@@ -115,21 +115,21 @@ export function Ticket() {
         }}
       />
 
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4">
-        <p className="text-4xl font-black uppercase tracking-wide text-[#2f120b] sm:text-5xl">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-2 sm:gap-4">
+        <p className="text-3xl font-black uppercase tracking-wide text-[#2f120b] sm:text-4xl md:text-5xl">
           Tickets
         </p>
-        <p className="text-base text-[#2f120b]/80 sm:text-lg">
+        <p className="text-sm text-center text-[#2f120b]/80 sm:text-base md:text-lg">
           Tickets are currently unavailable.
           <br />
           Be the first to know when the first wave drops
         </p>
-        <button className="mt-6 cursor-pointer rounded-full bg-gradient-to-b from-[#f7d7c2] to-[#d4b19e] px-10 py-3 text-base font-black uppercase tracking-wide text-[#2f120b] shadow-[0_10px_25px_rgba(87,33,1,0.25)] transition hover:translate-y-0.5">
+        <button className="mt-4 cursor-pointer rounded-full bg-gradient-to-b from-[#f7d7c2] to-[#d4b19e] px-8 py-2.5 text-sm font-black uppercase tracking-wide text-[#2f120b] shadow-[0_10px_25px_rgba(87,33,1,0.25)] transition hover:translate-y-0.5 sm:mt-6 sm:px-10 sm:py-3 sm:text-base">
           Join the waitlist
         </button>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-4 px-2 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {tiers.map((tier) => (
           <article
             key={tier.title}

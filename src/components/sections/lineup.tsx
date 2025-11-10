@@ -58,43 +58,43 @@ export function Lineup() {
 
       <div className="relative mx-auto max-w-6xl">
         {/* Heading */}
-        <h2 className="mb-12 text-center text-6xl font-black uppercase text-white sm:text-7xl lg:text-8xl">
+        <h2 className="mb-8 text-center text-5xl font-black uppercase text-white sm:mb-12 sm:text-7xl lg:text-8xl">
           Lineup
         </h2>
 
         {/* Announcement Banner */}
-        <div className="relative mx-auto mb-16 max-w-3xl">
+        <div className="relative mx-auto mb-12 max-w-3xl px-2 sm:mb-16">
           {/* Left stars - bottom left */}
-          <div className="pointer-events-none absolute -left-16 bottom-0 flex items-end gap-1 sm:-left-20">
-            <div className="twinkle text-6xl sm:text-7xl">✨</div>
-            <div className="twinkle-delayed text-3xl sm:text-4xl">✨</div>
+          <div className="pointer-events-none absolute -left-8 bottom-0 flex items-end gap-1 sm:-left-16 md:-left-20">
+            <div className="twinkle text-4xl sm:text-6xl md:text-7xl">✨</div>
+            <div className="twinkle-delayed text-2xl sm:text-3xl md:text-4xl">✨</div>
           </div>
 
           {/* Right stars - top right */}
-          <div className="pointer-events-none absolute -right-12 -top-8 flex items-start gap-1 sm:-right-16">
-            <div className="twinkle-delayed text-6xl sm:text-7xl">✨</div>
-            <div className="twinkle text-3xl sm:text-4xl">✨</div>
+          <div className="pointer-events-none absolute -right-6 -top-6 flex items-start gap-1 sm:-right-12 sm:-top-8 md:-right-16">
+            <div className="twinkle-delayed text-4xl sm:text-6xl md:text-7xl">✨</div>
+            <div className="twinkle text-2xl sm:text-3xl md:text-4xl">✨</div>
           </div>
 
-          <div className="rounded-3xl border-2 border-purple-400/50 bg-gradient-to-r from-purple-700 to-purple-600 px-8 py-6 text-center shadow-2xl">
-            <p className="text-xl font-bold text-white sm:text-2xl lg:text-3xl">
+          <div className="rounded-2xl border-2 border-purple-400/50 bg-gradient-to-r from-purple-700 to-purple-600 px-4 py-4 text-center shadow-2xl sm:rounded-3xl sm:px-8 sm:py-6">
+            <p className="text-base font-bold leading-snug text-white sm:text-xl md:text-2xl lg:text-3xl">
               Full lineup to be announced in January 2025
             </p>
           </div>
         </div>
 
         {/* Artist Cards Grid */}
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:grid-cols-4">
           {artists.map((artist, idx) => (
             <div
               key={idx}
-              className="relative aspect-square overflow-hidden rounded-3xl border-4 border-white/80 bg-black/90 shadow-xl"
+              className="relative aspect-square overflow-hidden rounded-2xl border-2 border-white/80 bg-black/90 shadow-xl sm:rounded-3xl sm:border-4"
             >
               {artist.locked ? (
                 // Locked Card
-                <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
+                <div className="flex h-full w-full flex-col items-center justify-center gap-3 p-3 sm:gap-4 sm:p-4">
                   <svg
-                    className="h-12 w-12 text-white/80"
+                    className="h-8 w-8 text-white/80 sm:h-12 sm:w-12"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -113,7 +113,7 @@ export function Lineup() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="rounded-full bg-gray-600/80 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+                  <span className="rounded-full bg-gray-600/80 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white sm:px-4 sm:py-1.5">
                     Coming Soon
                   </span>
                 </div>
@@ -125,13 +125,13 @@ export function Lineup() {
                     alt={artist.name}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent px-4 py-4">
-                    <h3 className="text-xl font-black text-white sm:text-2xl">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent px-3 py-3 sm:px-4 sm:py-4">
+                    <h3 className="text-base font-black text-white sm:text-xl md:text-2xl">
                       {artist.name}
                     </h3>
                   </div>
                   {/* Dollar badge on artist card */}
-                  <div className="absolute -left-3 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-lg font-black text-black shadow-lg">
+                  <div className="absolute -left-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-base font-black text-black shadow-lg sm:-left-3 sm:-top-3 sm:h-10 sm:w-10 sm:text-lg">
                     $
                   </div>
                 </div>

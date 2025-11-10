@@ -17,22 +17,22 @@ const socials = [
 ] as const;
 
 const inputStyles =
-  'h-16 w-full rounded-[40px] border border-white/30 bg-transparent px-6 text-base text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition';
+  'h-12 w-full rounded-[40px] border border-white/30 bg-transparent px-4 text-sm text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition sm:h-14 sm:px-6 sm:text-base lg:h-16';
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#060606] text-white">
       <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <p className="text-4xl font-black uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <div className="flex flex-col items-center gap-4 text-center sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <p className="text-3xl font-black uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
               STAY IN THE LOOP
             </p>
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#121212] shadow-[0_12px_30px_rgba(0,0,0,0.65)]">
-              <LoopIcon className="h-8 w-8" />
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#121212] shadow-[0_12px_30px_rgba(0,0,0,0.65)] sm:h-12 sm:w-12">
+              <LoopIcon className="h-6 w-6 sm:h-8 sm:w-8" />
             </span>
           </div>
-          <p className="max-w-3xl text-base leading-relaxed text-white/70 sm:text-xl">
+          <p className="max-w-3xl px-4 text-sm leading-relaxed text-white/70 sm:text-base md:text-xl">
             Sign up for <span className="font-semibold text-white">exclusive updates</span>,{' '}
             <span className="font-semibold text-white">line up reveals</span>,{' '}
             <span className="font-semibold text-white">early access</span> and{' '}
@@ -56,7 +56,7 @@ export function Footer() {
             </label>
             <button
               type="button"
-              className="h-16 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-lg font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110"
+              className="h-12 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-base font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 sm:h-14 sm:text-lg lg:h-16"
             >
               SIGN UP NOW
             </button>
@@ -87,11 +87,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-white/10 pt-8">
-          <span className="text-center text-[clamp(3.5rem,12vw,10rem)] font-black uppercase leading-none tracking-tight text-white">
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 sm:gap-4 sm:pt-8">
+          <span className="text-center text-[clamp(2.5rem,12vw,10rem)] font-black uppercase leading-none tracking-tight text-white">
             DANCE EKO
           </span>
-          <div className="flex justify-end text-sm font-semibold tracking-[0.4em] text-white/70">
+          <div className="flex justify-center text-xs font-semibold tracking-[0.3em] text-white/70 sm:justify-end sm:text-sm sm:tracking-[0.4em]">
             © 2025
           </div>
         </div>

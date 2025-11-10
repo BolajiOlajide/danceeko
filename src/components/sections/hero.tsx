@@ -16,25 +16,25 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-16 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-12 text-center sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
         {/* Main Title */}
-        <h1 className="mb-6 text-6xl font-black uppercase leading-tight text-white sm:text-7xl md:text-8xl lg:text-9xl">
+        <h1 className="mb-4 text-5xl font-black uppercase leading-tight text-white sm:mb-6 sm:text-7xl md:text-8xl lg:text-9xl">
           DANCE EKO 2025
         </h1>
 
         {/* Subtitle */}
-        <p className="mb-12 max-w-4xl text-lg font-normal text-white sm:text-xl md:text-2xl">
+        <p className="mb-8 max-w-4xl px-2 text-base font-normal leading-relaxed text-white sm:mb-12 sm:text-xl md:text-2xl">
           A fusion of Afrobeats, Amapiano, and Afrohouse culture that moves our generation. The
           city dances and you're invited to join the rhythm.
         </p>
 
         {/* Buttons */}
-        <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
+        <div className="mb-8 flex w-full max-w-md flex-col gap-3 px-2 sm:mb-12 sm:max-w-2xl sm:flex-row sm:gap-6">
           <a
             href="http://jetronticket.com/events/dance-eko-25"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg"
+            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
           >
             Get Tickets
           </a>
@@ -42,7 +42,7 @@ export function Hero() {
             href="https://www.youtube.com/@evenintheday/search?query=dance%20eko"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:text-lg"
+            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
           >
             Watch Dance Eko 2024
           </a>
