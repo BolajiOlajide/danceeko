@@ -56,7 +56,7 @@ export function Footer() {
             </label>
             <button
               type="button"
-              className="h-16 w-full rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-lg font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110"
+              className="h-16 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-lg font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110"
             >
               SIGN UP NOW
             </button>

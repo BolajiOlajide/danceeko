@@ -120,7 +120,7 @@ export function Ticket() {
           <br />
           Be the first to know when the first wave drops
         </p>
-        <button className="mt-6 rounded-full bg-gradient-to-b from-[#f7d7c2] to-[#d4b19e] px-10 py-3 text-base font-black uppercase tracking-wide text-[#2f120b] shadow-[0_10px_25px_rgba(87,33,1,0.25)] transition hover:translate-y-0.5">
+        <button className="mt-6 cursor-pointer rounded-full bg-gradient-to-b from-[#f7d7c2] to-[#d4b19e] px-10 py-3 text-base font-black uppercase tracking-wide text-[#2f120b] shadow-[0_10px_25px_rgba(87,33,1,0.25)] transition hover:translate-y-0.5">
           Join the waitlist
         </button>
       </div>
