@@ -28,7 +28,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="mb-8 max-w-4xl px-2 text-base font-normal leading-relaxed text-white sm:mb-12 sm:text-xl md:text-2xl">
-          A vibrant two-day festival dedicated to dance, music, and culture, featuring some of Africa’s biggest DJ acts and showcasing the power of rhythm, and the beauty of diverse traditions.
+          A two-day cultural experience blending music, dance, and African heritage.  Headlined by Africa’s finest DJs leading a celebration of the rhythm that connects us all.
         </p>
 
         {/* Buttons */}
