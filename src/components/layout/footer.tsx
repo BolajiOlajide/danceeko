@@ -16,6 +16,9 @@ const socials = [
   { icon: Mail, href: LINKS.email, label: 'Email' },
 ] as const;
 
+const inputStyles =
+  'h-16 w-full rounded-[40px] border border-white/30 bg-transparent px-6 text-base text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition';
+
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#060606] text-white">
@@ -37,21 +40,27 @@ export function Footer() {
           </p>
         </div>
 
-        <form className="flex w-full flex-col gap-4 text-left md:flex-row md:items-center">
-          <label className="w-full flex-1">
-            <span className="sr-only">Email address</span>
-            <input
-              type="email"
-              placeholder="youremail@example.com"
-              className="h-16 w-full rounded-[40px] border border-white/30 bg-transparent px-6 text-base text-white placeholder-white/40 focus:border-white focus:outline-none"
-            />
-          </label>
-          <button
-            type="button"
-            className="h-16 w-full rounded-[40px] bg-linear-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-lg font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 md:w-auto md:px-10"
-          >
-            SIGN UP NOW
-          </button>
+        <form className="w-full">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <label>
+              <span className="sr-only">Full name</span>
+              <input type="text" placeholder="Full name" className={inputStyles} />
+            </label>
+            <label>
+              <span className="sr-only">Email address</span>
+              <input type="email" placeholder="you@email.com" className={inputStyles} />
+            </label>
+            <label>
+              <span className="sr-only">Phone number</span>
+              <input type="tel" placeholder="Phone number" className={inputStyles} />
+            </label>
+            <button
+              type="button"
+              className="h-16 w-full rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-lg font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110"
+            >
+              SIGN UP NOW
+            </button>
+          </div>
         </form>
 
         <div className="flex flex-col items-center gap-6 text-white/70">
