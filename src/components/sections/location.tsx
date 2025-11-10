@@ -4,6 +4,23 @@ export function Location() {
       id="location"
       className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-10"
     >
+      {/* Pulsating animation styles */}
+      <style jsx>{`
+        @keyframes pulsate {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+          }
+        }
+        .pulsate {
+          animation: pulsate 1.5s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* Palm leaves background */}
       <div
         className="absolute inset-0"
@@ -17,11 +34,11 @@ export function Location() {
       />
 
       {/* 50% dark overlay */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-white/5" />
 
       <div className="relative mx-auto flex h-full w-full max-w-6xl items-center justify-center">
         {/* Coming Soon Tapes - positioned in the middle */}
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center -top-100 -m-20">
           <img
             src="/coming-soon.png"
             alt="Coming soon tape"
@@ -41,32 +58,21 @@ export function Location() {
         </div>
 
         {/* Location Card */}
-        <div className="relative z-10 w-full max-w-3xl rounded-3xl border border-white/20 bg-black/40 px-8 py-16 text-center backdrop-blur-md sm:px-12 sm:py-20">
+        <div className="relative z-10 w-full max-w-3xl rounded-3xl border border-white/20 bg-white/10 px-8 py-16 text-center backdrop-blur-sm sm:px-12 sm:py-20">
           {/* LOCATION label */}
-          <h3 className="mb-8 text-sm font-black uppercase tracking-[0.6em] text-gray-400 sm:text-base">
+          <h3 className="mb-8 text-md font-black uppercase tracking-[0.5em] text-gray-400 sm:text-base">
             Location
           </h3>
 
-          {/* Icons and Title */}
-          <div className="mb-8 flex flex-col items-center gap-6">
-            <div className="flex items-center gap-4">
-              {/* Plane Icon */}
-              <svg
-                className="h-12 w-12 text-yellow-500 sm:h-14 sm:w-14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-              </svg>
-
-              {/* Dollar Sign Badge */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-b from-[#f5d548] to-[#d49216] text-2xl font-black text-black shadow-lg sm:h-14 sm:w-14">
-                $
-              </div>
+          {/* Twinkle Icon and Title */}
+          <div className="mb-8 flex justify-center items-center">
+            {/* Pulsating Twinkle Icon */}
+            <div className="pulsate text-xl sm:text-2xl">
+              ✨
             </div>
 
             {/* To be announced */}
-            <h2 className="text-4xl font-black text-white sm:text-5xl lg:text-6xl">
+            <h2 className="text-xl font-black text-white sm:text-5xl lg:text-2xl">
               To be announced
             </h2>
           </div>
