@@ -64,7 +64,7 @@ export function Lineup() {
             <div className="twinkle text-2xl sm:text-3xl md:text-4xl">✨</div>
           </div>
 
-          <div className="rounded-2xl border-2 border-purple-400/50 bg-gradient-to-r from-purple-700 to-purple-600 px-4 py-4 text-center shadow-2xl sm:rounded-3xl sm:px-8 sm:py-6">
+          <div className="rounded-2xl border-2 border-purple-400/50 bg-linear-to-r from-purple-700 to-purple-600 px-4 py-4 text-center shadow-2xl sm:rounded-3xl sm:px-8 sm:py-6">
             <p className="text-base font-bold leading-snug text-white sm:text-xl md:text-2xl lg:text-3xl">
               To be announced
             </p>

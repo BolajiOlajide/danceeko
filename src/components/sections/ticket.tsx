@@ -21,7 +21,7 @@ const tiers = [
   {
     title: 'Pre-sale',
     pattern: 'coralDots',
-    perks: ['Festival Access'],
+    perks: ['Festival Access', 'Main festival ground'],
     locked: false,
     link: 'https://www.jetronticket.com/dance-eko-25',
     buttonColor: 'from-[#ff6a4f] to-[#e85537]',
@@ -29,7 +29,7 @@ const tiers = [
   {
     title: 'General Sale',
     pattern: 'amberDots',
-    perks: ['Festival Access'],
+    perks: ['Festival Access', 'Main festival ground'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -181,12 +181,12 @@ export function Ticket() {
                     </>
                   ) : (
                     <>
-                      <div className="h-12" />
+                      <div className="h-8 w-8" />
                       <a
                         href={tier.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-b ${tier.buttonColor} px-6 py-2.5 text-sm font-black uppercase tracking-wide text-white shadow-lg transition hover:brightness-110`}
+                        className="inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner transition hover:brightness-110"
                       >
                         Get Tickets
                       </a>

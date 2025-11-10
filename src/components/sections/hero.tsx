@@ -55,11 +55,11 @@ export function Hero() {
         <div
           className="flex cursor-pointer flex-col items-center gap-2"
           onClick={() => {
-            document.getElementById('lineup')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('tickets')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
           <p className="text-sm font-medium uppercase tracking-widest text-white/80 sm:text-base">
-            Scroll to Explore
+            Explore
           </p>
           <svg
             className="h-6 w-6 animate-bounce text-white/80"
