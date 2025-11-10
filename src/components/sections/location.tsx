@@ -38,7 +38,7 @@ export function Location() {
 
       <div className="relative mx-auto flex h-full w-full max-w-6xl items-center justify-center">
         {/* Coming Soon Tapes - positioned in the middle */}
-        <div className="absolute inset-0 flex items-center -top-100 -m-20">
+        {/*<div className="absolute inset-0 flex items-center -top-100 -m-20">
           <img
             src="/coming-soon.png"
             alt="Coming soon tape"
@@ -55,7 +55,7 @@ export function Location() {
               transform: 'rotate(6deg)',
             }}
           />
-        </div>
+        </div>*/}
 
         {/* Location Card */}
         <div className="relative z-10 w-full max-w-3xl rounded-2xl border border-white/20 bg-white/10 px-6 py-12 text-center backdrop-blur-sm sm:rounded-3xl sm:px-12 sm:py-20">
