@@ -31,7 +31,7 @@ export function Hero() {
         {/* Buttons */}
         <div className="mb-8 flex w-full max-w-md flex-col gap-3 px-2 sm:mb-12 sm:max-w-2xl sm:flex-row sm:gap-6">
           <a
-            href="http://jetronticket.com/events/dance-eko-25"
+            href="https://www.jetronticket.com/dance-eko-25#tickets"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"

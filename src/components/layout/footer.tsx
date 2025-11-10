@@ -1,4 +1,5 @@
 import type { SVGProps } from 'react';
+import { useState } from 'react';
 import { Instagram, Youtube, Mail } from 'lucide-react';
 import { LINKS } from '@/lib/constants';
 
@@ -20,6 +21,52 @@ const inputStyles =
   'h-12 w-full rounded-[40px] border border-white/30 bg-transparent px-4 text-sm text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition sm:h-14 sm:px-6 sm:text-base lg:h-16';
 
 export function Footer() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setMessage('Thank you for subscribing!');
+        setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+      } else {
+        setStatus('error');
+        setMessage(data.error || 'Failed to subscribe. Please try again.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage('An error occurred. Please try again.');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <footer className="border-t border-white/10 bg-[#060606] text-white">
       <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -40,27 +87,58 @@ export function Footer() {
           </p>
         </div>
 
-        <form className="w-full">
+        <form className="w-full" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <label>
-              <span className="sr-only">Full name</span>
-              <input type="text" placeholder="Full name" className={inputStyles} />
+              <span className="sr-only">First name</span>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First name"
+                value={formData.firstName}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                className={inputStyles}
+              />
             </label>
             <label>
               <span className="sr-only">Email address</span>
-              <input type="email" placeholder="you@email.com" className={inputStyles} />
+              <input
+                type="email"
+                name="email"
+                placeholder="you@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                required
+                className={inputStyles}
+              />
             </label>
             <label>
               <span className="sr-only">Phone number</span>
-              <input type="tel" placeholder="Phone number" className={inputStyles} />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                className={inputStyles}
+              />
             </label>
             <button
-              type="button"
-              className="h-12 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-base font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 sm:h-14 sm:text-lg lg:h-16"
+              type="submit"
+              disabled={status === 'loading'}
+              className="h-12 w-full cursor-pointer rounded-[40px] bg-gradient-to-b from-[#5f5f5f] via-[#393939] to-[#202020] text-base font-black uppercase tracking-wide text-white shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 sm:h-14 sm:text-lg lg:h-16"
             >
-              SIGN UP NOW
+              {status === 'loading' ? 'SUBMITTING...' : 'SIGN UP NOW'}
             </button>
           </div>
+          {message && (
+            <div className={`mt-4 text-center text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+              {message}
+            </div>
+          )}
         </form>
 
         <div className="flex flex-col items-center gap-6 text-white/70">
