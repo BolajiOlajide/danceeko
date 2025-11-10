@@ -7,10 +7,6 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
   { locked: true },
   { locked: true },
   { locked: true },
-  { locked: true },
-  { locked: true },
-  { locked: true },
-  { locked: true },
 ];
 
 export function Lineup() {

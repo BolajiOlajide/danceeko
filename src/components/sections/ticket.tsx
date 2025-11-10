@@ -163,14 +163,14 @@ export function Ticket() {
             </div>
 
             <div className="relative flex flex-1 flex-col px-8 pb-10 pt-8 text-[#2f120b]">
-              <div className="flex min-h-[108px] flex-col gap-3 text-base">
+              <div className="flex flex-col gap-3 text-base sm:min-h-[108px]">
                 {tier.perks.map((perk) => (
                   <p key={perk} className="font-medium">
                     {perk}
                   </p>
                 ))}
               </div>
-              <div className="relative mt-6 border-t border-dashed border-[#a18a7c] pt-6">
+              <div className="relative mt-6 pt-6">
                 <div className="flex flex-col items-center gap-4">
                   {tier.locked ? (
                     <>

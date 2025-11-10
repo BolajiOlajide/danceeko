@@ -13,7 +13,7 @@ export function Hero() {
       </video>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-12 text-center sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
