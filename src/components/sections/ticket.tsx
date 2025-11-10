@@ -21,7 +21,7 @@ const tiers = [
   {
     title: 'Pre-sale',
     pattern: 'coralDots',
-    perks: ['Festival Access', 'Main festival ground'],
+    perks: ['Festival Access', 'Main festival ground', 'Immersive experience zones'],
     locked: false,
     link: 'https://www.jetronticket.com/dance-eko-25',
     buttonColor: 'from-[#ff6a4f] to-[#e85537]',
@@ -29,7 +29,7 @@ const tiers = [
   {
     title: 'General Sale',
     pattern: 'amberDots',
-    perks: ['Festival Access', 'Main festival ground'],
+    perks: ['Festival Access', 'Main festival ground', 'Immersive experience zones'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -37,7 +37,7 @@ const tiers = [
   {
     title: 'VIP CABANA',
     pattern: 'blueStars',
-    perks: ['Festival Access', 'Premium Experience', 'Exclusive Perks'],
+    perks: ['Festival Access', 'Allocated VIP lounge', 'Immersive experience zones'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -45,7 +45,7 @@ const tiers = [
   {
     title: 'STAGE ACCESS',
     pattern: 'greenStars',
-    perks: ['Festival Access', 'Stage Pass'],
+    perks: ['Festival Access', 'Stage Pass', 'Immersive experience zones'],
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
@@ -186,7 +186,7 @@ export function Ticket() {
                         href={tier.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner transition hover:brightness-110"
+                        className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-linear-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner transition hover:brightness-110 ${tier.buttonColor}`}
                       >
                         Get Tickets
                       </a>
