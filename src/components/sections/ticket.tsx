@@ -103,8 +103,12 @@ export function Ticket() {
       style={{ backgroundImage: stageGradient, backgroundColor: stageBaseColor }}
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-50 custom-grain"
-        style={{ backgroundImage: `url("${noiseTexture}")`, mixBlendMode: 'multiply' }}
+        className="pointer-events-none absolute inset-0 opacity-45"
+        style={{
+          backgroundImage: `url("${noiseTexture}")`,
+          backgroundSize: '180px 180px',
+          mixBlendMode: 'multiply',
+        }}
       />
 
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4">
@@ -172,11 +176,9 @@ export function Ticket() {
               </div>
 
               <div className="relative mt-6 border-t border-dashed border-[#a18a7c] pt-6">
-                <span className="absolute left-0 top-0 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ backgroundColor: cardBackground }} />
-                <span className="absolute right-0 top-0 h-12 w-12 translate-x-1/2 -translate-y-1/2 rounded-full" style={{ backgroundColor: cardBackground }} />
                 <div className="flex flex-col items-center gap-4">
                   <LockIcon className="h-8 w-8" stroke={tier.lockColor} />
-                  <span className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-gradient-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner">
+                  <span className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-linear-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner">
                     Coming Soon
                   </span>
                 </div>
