@@ -17,10 +17,14 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-12 text-center sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        {/* Main Title */}
-        <h1 className="mb-4 text-5xl font-black uppercase leading-tight text-white sm:mb-6 sm:text-7xl md:text-8xl lg:text-9xl">
-          DANCE EKO 2025
-        </h1>
+        {/* Main Logo */}
+        <div className="mb-4 sm:mb-6">
+          <img
+            src="/Dance-EKO-2025-Logo-trans.png"
+            alt="Dance EKO 2025"
+            className="w-full max-w-xl px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
+          />
+        </div>
 
         {/* Subtitle */}
         <p className="mb-8 max-w-4xl px-2 text-base font-normal leading-relaxed text-white sm:mb-12 sm:text-xl md:text-2xl">
