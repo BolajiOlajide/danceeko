@@ -18,7 +18,7 @@ const socials = [
 ] as const;
 
 const inputStyles =
-  'h-12 w-full rounded-[40px] border border-white/30 bg-transparent px-4 text-sm text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition sm:h-14 sm:px-6 sm:text-base lg:h-16';
+  'h-12 w-full rounded-[40px] border border-white/30 bg-transparent px-4 text-base text-white placeholder-white/50 focus:border-white focus:outline-none focus:ring-1 focus:ring-white/40 transition sm:h-14 sm:px-6 lg:h-16';
 
 export function Footer() {
   const [formData, setFormData] = useState({
