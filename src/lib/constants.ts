@@ -24,10 +24,10 @@ export const LINKS = {
   signup: '#signup',
   watchVideo: '#watch-2024',
   waitlist: '#waitlist',
-  instagram: 'https://instagram.com/danceeko',
-  youtube: 'https://youtube.com/@danceeko',
-  twitter: 'https://twitter.com/danceeko',
-  email: 'mailto:info@danceeko.com',
+  instagram: 'https://www.instagram.com/dance.eko',
+  youtube: 'https://youtube.com/@evenintheday',
+  twitter: 'https://x.com/danceek0',
+  tiktok: 'https://www.tiktok.com/@dance.eko'
 } as const;
 
 export const TICKET_TIERS = [
