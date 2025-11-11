@@ -1,8 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stat } from 'node:fs/promises';
-
-const WIX_SITE_ID = 'b3193f81-d796-471e-8ff6-f4d438fd3b6e';
-const WIX_FORM_ID = 'fc2c4d73-1102-499d-9b84-536690e72cbc';
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,50 +27,61 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get API key from environment variable
-    const apiKey = process.env.WIX_API_KEY;
+    // Get Airtable credentials from environment variables
+    const airtableToken = process.env.AIRTABLE_TOKEN;
+    const airtableBaseId = process.env.AIRTABLE_BASE_ID;
+    const airtableTableName = process.env.AIRTABLE_TABLE_NAME;
 
-    if (!apiKey) {
-      console.error('WIX_API_KEY is not configured');
+    if (!airtableToken || !airtableBaseId || !airtableTableName) {
+      console.error('Airtable credentials not configured');
       return NextResponse.json(
         { error: 'Server configuration error' },
         { status: 500 }
       );
     }
 
-    const submissionData = {
-      submission: {
-        formId: WIX_FORM_ID,
-        submissions: {
-          'First name': firstName,
-          'Last name': lastName || '',
-          'Email': email,
-          'Phone': phone || ''
-        },
-        status: 'CONFIRMED'
-      }
+    // Prepare Airtable record
+    const recordData = {
+      records: [
+        {
+          fields: {
+            'First Name': firstName,
+            'Last Name': lastName,
+            'E-mail': email,
+            ...(phone && { 'Phone': phone }),
+          }
+        }
+      ]
     };
 
-    // Submit to Wix Forms API
+    // Submit to Airtable API
     const response = await fetch(
-      'https://www.wixapis.com/form-submission-service/v4/submissions',
+      `https://api.airtable.com/v0/${airtableBaseId}/${airtableTableName}`,
       {
         method: 'POST',
         headers: {
-          'Authorization': apiKey,
+          'Authorization': `Bearer ${airtableToken}`,
           'Content-Type': 'application/json',
-          'wix-site-id': WIX_SITE_ID,
         },
-        body: JSON.stringify(submissionData),
+        body: JSON.stringify(recordData),
       }
     );
 
-    const data = await response.json();
+    const responseText = await response.text();
+
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (e) {
+      data = { rawResponse: responseText };
+    }
 
     if (!response.ok) {
-      console.error('Wix API error:', data);
+      console.error('=== Airtable API Error ===');
+      console.error('Status:', response.status);
+      console.error('Response:', data);
       return NextResponse.json(
-        { error: 'Failed to submit form', details: data },
+        { error: 'Failed to submit form', details: data.error || data },
         { status: response.status }
       );
     }
@@ -82,7 +89,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Successfully subscribed!',
-      submissionId: data.submission?.id
+      recordId: data.records?.[0]?.id
     });
 
   } catch (error) {
