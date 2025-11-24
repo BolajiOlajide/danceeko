@@ -1,12 +1,59 @@
 const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
   {
-    // name: 'Skyla Tyla',
-    // image: '/artists/skyla-tyla.jpg',
-    locked: true,
+    name: 'Mörda',
+    image: '/artists/morda.webp',
+    locked: false,
   },
-  { locked: true },
-  { locked: true },
-  { locked: true },
+  {
+    name: 'Skyla Tyla',
+    image: '/artists/skyla-tyla.webp',
+    locked: false,
+  },
+  {
+    name: 'Jnr SA',
+    image: '/artists/jnr-sa.jpg',
+    locked: false,
+  },
+  {
+    name: '2wo Bunnies',
+    image: '/artists/2wo-bunnies.PNG',
+    locked: false,
+  },
+  {
+    name: 'Aniko',
+    image: '/artists/aniko.jpg',
+    locked: false,
+  },
+  {
+    name: 'Six7even',
+    image: '/artists/Six7even.JPG',
+    locked: false,
+  },
+  {
+    name: 'Blak Dave',
+    image: '/artists/blak-dave.webp',
+    locked: false,
+  },
+  {
+    name: 'Farati',
+    image: '/artists/farati.jpg',
+    locked: false,
+  },
+  {
+    name: 'SoundsOfAce',
+    image: '/artists/soa4.jpg',
+    locked: false,
+  },
+  {
+    name: 'Tobi Peter',
+    image: '/artists/tobi-peter.jpg',
+    locked: false,
+  },
+  {
+    name: 'EarthSurfing',
+    image: '/artists/earth-surfing.jpg',
+    locked: false,
+  },
 ];
 
 export function Lineup() {
