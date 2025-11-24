@@ -5,7 +5,7 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
     locked: false,
   },
   {
-    name: 'Skyla Tyla',
+    name: 'Skyla Tylaa',
     image: '/artists/skyla-tyla.webp',
     locked: false,
   },
