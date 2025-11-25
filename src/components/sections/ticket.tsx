@@ -48,9 +48,9 @@ const tiers = [
     title: 'STAGE ACCESS',
     pattern: 'greenStars',
     perks: ['Festival Access', 'Stage Pass', 'Immersive experience zones'],
-    locked: true,
-    lockColor: '#a8a8ad',
-    buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
+    locked: false,
+    link: 'https://www.jetronticket.com/dance-eko-25',
+    buttonColor: 'from-[#ff6a4f] to-[#e85537]',
   },
 ] as const;
 
