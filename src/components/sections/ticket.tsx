@@ -23,6 +23,7 @@ const tiers = [
     pattern: 'coralDots',
     perks: ['Festival Access', 'Main festival ground', 'Immersive experience zones'],
     locked: true,
+    lockColor: '#a8a8ad',
     link: 'https://www.jetronticket.com/dance-eko-25',
     buttonColor: 'from-[#ff6a4f] to-[#e85537]',
     soldOut: true,
@@ -52,6 +53,7 @@ const tiers = [
     locked: true,
     lockColor: '#a8a8ad',
     buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
+    soldOut: false,
   },
 ] as const;
 
@@ -177,8 +179,18 @@ export function Ticket() {
                 <div className="flex flex-col items-center gap-4">
                   {tier.locked ? (
                     <>
-                      <LockIcon className="h-8 w-8" stroke={tier.lockColor} />
-                      <span className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-linear-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner">
+                      {!tier.soldOut ? (
+                        <LockIcon className="h-8 w-8" stroke={tier.lockColor} />
+                      ) : (
+                        <div className="h-8 w-8" />
+                      )}
+                      <span
+                        className={`inline-flex min-w-[140px] items-center justify-center rounded-full bg-linear-to-b px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner ${
+                          tier.soldOut
+                            ? 'from-[#2f120b] to-[#1a0a06]'
+                            : 'from-[#bbbbbb] to-[#7d7d7f]'
+                        }`}
+                      >
                         {tier.soldOut ? 'Sold Out' : 'Coming Soon'}
                       </span>
                     </>
