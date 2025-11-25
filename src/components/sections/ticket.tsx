@@ -33,7 +33,8 @@ const tiers = [
     locked: false,
     // lockColor: '#a8a8ad',
     link: 'https://www.jetronticket.com/dance-eko-25',
-    buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
+    // buttonColor: 'from-[#bbbbbb] to-[#7d7d7f]',
+    buttonColor: 'from-[#ff6a4f] to-[#e85537]',
   },
   {
     title: 'VIP CABANA',
