@@ -10,6 +10,16 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
     locked: false,
   },
   {
+    name: 'Distruction Boyz',
+    image: '/artists/distruction.jpg',
+    locked: false,
+  },
+  {
+    name: 'Shakes & Les',
+    image: '/artists/shakesles.jpg',
+    locked: false,
+  },
+  {
     name: 'Jnr SA',
     image: '/artists/jnr-sa.jpg',
     locked: false,
@@ -20,13 +30,28 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
     locked: false,
   },
   {
-    name: 'Aniko',
-    image: '/artists/aniko.jpg',
+    name: 'Kwamzy',
+    image: '/artists/kwamzy.jpeg',
     locked: false,
   },
   {
     name: 'Six7even',
     image: '/artists/Six7even.JPG',
+    locked: false,
+  },
+  {
+    name: 'Aniko',
+    image: '/artists/aniko.jpg',
+    locked: false,
+  },
+  {
+    name: 'Naija House Mafia',
+    image: '/artists/nhm.jpg',
+    locked: false,
+  },
+  {
+    name: 'Proton',
+    image: '/artists/proton.jpg',
     locked: false,
   },
   {
@@ -45,6 +70,11 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
     locked: false,
   },
   {
+    name: 'Abiodun',
+    image: '/artists/abiodun.jpg',
+    locked: false,
+  },
+  {
     name: 'Tobi Peter',
     image: '/artists/tobi-peter.jpg',
     locked: false,
@@ -52,6 +82,11 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
   {
     name: 'EarthSurfing',
     image: '/artists/earth-surfing.jpg',
+    locked: false,
+  },
+  {
+    name: 'Wizzy Drumz',
+    image: '/artists/wizzydrumz.jpg',
     locked: false,
   },
 ];
