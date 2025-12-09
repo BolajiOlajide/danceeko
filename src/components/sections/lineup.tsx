@@ -200,7 +200,7 @@ export function Lineup() {
                     alt={artist.name}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent px-3 py-3 sm:px-4 sm:py-4">
+                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 to-transparent px-3 py-3 sm:px-4 sm:py-4">
                     <h3 className="text-base font-black text-white sm:text-xl md:text-2xl">
                       {artist.name}
                     </h3>
