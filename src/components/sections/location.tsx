@@ -104,8 +104,7 @@ export function Location() {
             transition={{ delay: 0.8, duration: 1 }}
             className="px-2 text-sm leading-relaxed text-white/90 sm:text-base md:text-lg"
           >
-            We're building a new world inside Lagos unlike anything you've ever experienced, stay
-            tuned!
+            We're building a new world inside Lagos unlike anything you've ever experienced!
           </motion.p>
         </motion.div>
       </div>
