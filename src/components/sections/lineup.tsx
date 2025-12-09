@@ -84,6 +84,11 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
     image: '/artists/earth-surfing.jpg',
     locked: false,
   },
+  // {
+  //   name: 'Revibe',
+  //   image: '/artists/revibe.jpg',
+  //   locked: false,
+  // },
   {
     name: 'Wizzy Drumz',
     image: '/artists/wizzydrumz.jpg',
