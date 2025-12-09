@@ -1,3 +1,7 @@
+'use client';
+
+import { trackTicketClick } from '@/lib/analytics';
+
 export function Hero() {
   return (
     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
@@ -37,6 +41,7 @@ export function Hero() {
             href="https://www.jetronticket.com/dance-eko-25#tickets"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackTicketClick('Hero')}
             className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
           >
             Get Tickets

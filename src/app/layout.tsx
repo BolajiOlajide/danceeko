@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
+import { GoogleAnalytics } from '@/components/google-analytics';
 import './globals.css';
 
 const workSans = Work_Sans({ 
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${workSans.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

@@ -1,4 +1,7 @@
+'use client';
+
 import type { CSSProperties } from 'react';
+import { trackTicketClick } from '@/lib/analytics';
 
 const noiseTexture =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E";
@@ -198,13 +201,14 @@ export function Ticket() {
                     <>
                       <div className="h-8 w-8" />
                       <a
-                        href={tier.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-linear-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner transition hover:brightness-110 ${tier.buttonColor}`}
-                      >
-                        Get Tickets
-                      </a>
+                                                              href={tier.link}
+                                                              target="_blank"
+                                                              rel="noopener noreferrer"
+                                                              onClick={() => trackTicketClick(tier.title)}
+                                                              className={`inline-flex min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-linear-to-b from-[#bbbbbb] to-[#7d7d7f] px-6 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow-inner transition hover:brightness-110 ${tier.buttonColor}`}
+                                                            >
+                                                              Get Tickets
+                                                            </a>
                     </>
                   )}
                 </div>
