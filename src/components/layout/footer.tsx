@@ -1,7 +1,10 @@
+'use client';
+
 import type { SVGProps } from 'react';
 import { useState } from 'react';
 import { Instagram, Youtube } from 'lucide-react';
 import { LINKS } from '@/lib/constants';
+import { trackSocialClick } from '@/lib/analytics';
 
 const navigation = [
   { name: 'Lineup', href: '#lineup' },
@@ -174,6 +177,7 @@ export function Footer() {
                 className="text-white/80 transition hover:text-white"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackSocialClick(label.toLowerCase())}
               >
                 <Icon className="h-6 w-6" />
               </a>

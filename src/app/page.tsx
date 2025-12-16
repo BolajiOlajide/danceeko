@@ -1,38 +1,16 @@
-'use client';
-
-import dynamicImport from 'next/dynamic';
-
-export const dynamic = 'force-dynamic';
-
-const HeroSection = dynamicImport(
-  () => import('@/components/sections/hero').then((mod) => ({ default: mod.Hero })),
-  { ssr: false }
-);
-
-const LineupSection = dynamicImport(
-  () => import('@/components/sections/lineup').then((mod) => ({ default: mod.Lineup })),
-  { ssr: false }
-);
-
-const LocationSection = dynamicImport(
-  () => import('@/components/sections/location').then((mod) => ({ default: mod.Location })),
-  { ssr: false }
-);
-
-const TicketSection = dynamicImport(
-  () => import('@/components/sections/ticket').then((mod) => ({ default: mod.Ticket })),
-  { ssr: false }
-);
-
-const Footer = dynamicImport(() => import('@/components/layout/footer').then(mod => ({ default: mod.Footer })), { ssr: false });
+import { Hero } from '@/components/sections/hero';
+import { Lineup } from '@/components/sections/lineup';
+import { Location } from '@/components/sections/location';
+import { Ticket } from '@/components/sections/ticket';
+import { Footer } from '@/components/layout/footer';
 
 export default function Home() {
   return (
     <main className="relative bg-black min-h-screen">
-      <HeroSection />
-      <TicketSection />
-      <LineupSection />
-      <LocationSection />
+      <Hero />
+      <Ticket />
+      <Lineup />
+      <Location />
       <Footer />
     </main>
   );

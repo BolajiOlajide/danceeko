@@ -1,3 +1,8 @@
+'use client';
+
+import { useRef } from 'react';
+import { trackArtistHover } from '@/lib/analytics';
+
 const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
   {
     name: 'Mörda',
@@ -97,6 +102,15 @@ const artists: Array<{ locked: boolean; name?: string; image?: string }> = [
 ];
 
 export function Lineup() {
+  const hoveredArtists = useRef<Set<string>>(new Set());
+
+  const handleArtistHover = (artistName: string) => {
+    if (!hoveredArtists.current.has(artistName)) {
+      hoveredArtists.current.add(artistName);
+      trackArtistHover(artistName);
+    }
+  };
+
   return (
     <section
       id="lineup"
@@ -164,6 +178,7 @@ export function Lineup() {
             <div
               key={idx}
               className="relative aspect-square overflow-hidden rounded-2xl border-2 border-white/80 bg-black/90 shadow-xl sm:rounded-3xl sm:border-4"
+              onMouseEnter={() => artist.name && handleArtistHover(artist.name)}
             >
               {artist.locked ? (
                 // Locked Card

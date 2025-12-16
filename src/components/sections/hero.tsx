@@ -1,6 +1,7 @@
 'use client';
 
-import { trackTicketClick } from '@/lib/analytics';
+import { CountdownTimer } from '@/components/countdown-timer';
+import { trackGetTicketsClick, trackWatchVideoClick } from '@/lib/analytics';
 
 export function Hero() {
   return (
@@ -30,6 +31,11 @@ export function Hero() {
           />
         </div>
 
+        {/* Countdown Timer */}
+        <div className="mb-6 sm:mb-8">
+          <CountdownTimer />
+        </div>
+
         {/* Subtitle */}
         <p className="mb-8 max-w-4xl px-2 text-base font-normal leading-relaxed text-white sm:mb-12 sm:text-xl md:text-2xl">
           A two-day cultural experience blending music, dance, and African heritage.  Headlined by Africa’s finest DJs leading a celebration of the rhythm that connects us all.
@@ -41,7 +47,7 @@ export function Hero() {
             href="https://www.jetronticket.com/dance-eko-25#tickets"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackTicketClick('Hero')}
+            onClick={() => trackGetTicketsClick('hero')}
             className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
           >
             Get Tickets
@@ -50,6 +56,7 @@ export function Hero() {
             href="https://www.youtube.com/@evenintheday/search?query=dance%20eko"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWatchVideoClick()}
             className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
           >
             Watch Dance Eko 2024

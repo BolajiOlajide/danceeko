@@ -36,3 +36,43 @@ export const trackEvent = (
 export const trackTicketClick = (tierName: string) => {
   trackEvent('click', 'ticket_purchase', tierName);
 };
+
+export const trackGetTicketsClick = (location: string) => {
+  trackEvent('click', 'get_tickets', location);
+};
+
+export const trackWatchVideoClick = () => {
+  trackEvent('click', 'watch_video', 'dance_eko_2024');
+};
+
+export const trackSectionView = (sectionName: string) => {
+  trackEvent('section_view', 'engagement', sectionName);
+};
+
+export const trackScrollDepth = (percentage: number) => {
+  trackEvent('scroll', 'engagement', `${percentage}%`, percentage);
+};
+
+export const trackIdleTime = (seconds: number) => {
+  trackEvent('idle_time', 'engagement', `${seconds}s`, seconds);
+};
+
+export const trackExitIntent = () => {
+  trackEvent('exit_intent', 'engagement', 'mouse_leave');
+};
+
+export const trackArtistHover = (artistName: string) => {
+  trackEvent('artist_hover', 'engagement', artistName);
+};
+
+export const trackSocialClick = (platform: string) => {
+  trackEvent('social_click', 'conversion', platform);
+};
+
+export const trackCtaVisibility = (ctaName: string) => {
+  trackEvent('cta_visible', 'engagement', ctaName);
+};
+
+export const trackSectionTime = (sectionName: string, seconds: number) => {
+  trackEvent('section_time', 'engagement', sectionName, seconds);
+};
