@@ -21,19 +21,27 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-12 text-center sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-end px-4 pb-8 text-center sm:px-6 sm:pb-12 lg:px-8 lg:pb-16">
         {/* Main Logo */}
-        <div className="mb-4 sm:mb-6">
+        <div className="mb-2 sm:mb-4">
           <img
             src="/Dance-EKO-2025-Logo-trans.png"
             alt="Dance EKO 2025"
-            className="w-full max-w-xl px-4 sm:max-w-2xl md:max-w-3xl lg:max-w-4xl"
+            className="w-full max-w-md px-4 sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
           />
         </div>
 
         {/* Countdown Timer */}
-        <div className="mb-6 sm:mb-8">
+        <div className="mb-4 sm:mb-6">
           <CountdownTimer />
+        </div>
+
+        {/* Social Proof Badge */}
+        <div className="mb-4 flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm sm:mb-6">
+          <span className="text-lg sm:text-xl">🎉</span>
+          <span className="text-sm font-medium text-white sm:text-base">
+            5,000+ attended in 2024
+          </span>
         </div>
 
         {/* Subtitle */}
@@ -48,7 +56,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackGetTicketsClick('hero')}
-            className="cursor-pointer rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-bold uppercase text-white backdrop-blur-sm transition-all hover:bg-white/20 sm:px-10 sm:py-4 sm:text-lg"
+            className="cursor-pointer rounded-full bg-gradient-to-b from-[#ff6a4f] to-[#e85537] px-6 py-3 text-sm font-bold uppercase text-white shadow-lg transition-all hover:brightness-110 hover:shadow-xl sm:px-10 sm:py-4 sm:text-lg"
           >
             Get Tickets
           </a>

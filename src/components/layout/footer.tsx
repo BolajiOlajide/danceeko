@@ -4,7 +4,7 @@ import type { SVGProps } from 'react';
 import { useState } from 'react';
 import { Instagram, Youtube } from 'lucide-react';
 import { LINKS } from '@/lib/constants';
-import { trackSocialClick } from '@/lib/analytics';
+import { trackSocialClick, trackFormSubmit, trackFormError } from '@/lib/analytics';
 
 const navigation = [
   { name: 'Lineup', href: '#lineup' },
@@ -53,13 +53,18 @@ export function Footer() {
         setStatus('success');
         setMessage('Thank you for subscribing!');
         setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+        trackFormSubmit('newsletter', true);
       } else {
         setStatus('error');
         setMessage(data.error || 'Failed to subscribe. Please try again.');
+        trackFormSubmit('newsletter', false);
+        trackFormError('newsletter', data.error || 'Unknown error');
       }
     } catch (error) {
       setStatus('error');
       setMessage('An error occurred. Please try again.');
+      trackFormSubmit('newsletter', false);
+      trackFormError('newsletter', 'Network error');
     }
   };
 

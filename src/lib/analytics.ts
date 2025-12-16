@@ -76,3 +76,11 @@ export const trackCtaVisibility = (ctaName: string) => {
 export const trackSectionTime = (sectionName: string, seconds: number) => {
   trackEvent('section_time', 'engagement', sectionName, seconds);
 };
+
+export const trackFormSubmit = (formName: string, success: boolean) => {
+  trackEvent('form_submit', 'conversion', formName, success ? 1 : 0);
+};
+
+export const trackFormError = (formName: string, errorMessage: string) => {
+  trackEvent('form_error', 'engagement', `${formName}: ${errorMessage}`);
+};
