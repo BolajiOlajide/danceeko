@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const EVENT_DATE = new Date('2025-12-27T00:00:00+01:00');
+const EVENT_DATE = new Date('2025-12-19T16:00:00+01:00');
 
 interface TimeLeft {
   days: number;
@@ -13,7 +13,7 @@ interface TimeLeft {
 
 function calculateTimeLeft(): TimeLeft {
   const difference = EVENT_DATE.getTime() - new Date().getTime();
-  
+
   if (difference <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
@@ -33,7 +33,7 @@ export function CountdownTimer() {
   useEffect(() => {
     setMounted(true);
     setTimeLeft(calculateTimeLeft());
-    
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
