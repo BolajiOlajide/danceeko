@@ -84,3 +84,11 @@ export const trackFormSubmit = (formName: string, success: boolean) => {
 export const trackFormError = (formName: string, errorMessage: string) => {
   trackEvent('form_error', 'engagement', `${formName}: ${errorMessage}`);
 };
+
+export const trackFormView = (formName: string) => {
+  trackEvent('view_form', 'engagement', formName);
+};
+
+export const trackAnotherRegistration = (formName: string) => {
+  trackEvent('click', 'engagement', `register_another_${formName}`);
+};
